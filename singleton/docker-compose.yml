@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  etcd-singleton:
+    image: bitnami/etcd:3.4.1
+    container_name: etcd-singleton
+    ports:
+      - 2379:2379
+      - 2380:2380
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+    volumes:
+      - ./data:/bitnami
+    networks:
+      - docker-net
+
+networks:
+  docker-net:
+    external: true
