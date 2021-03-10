@@ -12,8 +12,8 @@ services:
     volumes:
       - ./data:/bitnami
     networks:
-      - docker-net
+      - local-net
 
 networks:
-  docker-net:
+  local-net:
     external: true
